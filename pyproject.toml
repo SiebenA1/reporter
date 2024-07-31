@@ -1,0 +1,72 @@
+## Help:
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+
+# ##########################################
+
+[tool.mypy]
+namespace_packages = false
+ignore_missing_imports = true
+show_error_codes = true
+exclude = [
+    'version.py',
+]
+
+[[tool.mypy.overrides]]
+module = "yaml.*"
+ignore_missing_imports = true
+
+# ##########################################
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 150
+disable = [
+    "missing-final-newline",
+    "invalid-name",
+    "no-else-return",
+    "W0621",
+    "E0401"
+]
+
+[tool.pylint.'MASTER']
+ignore-paths = ["^ignore-here$"]
+
+[tool.flake8]
+ignore = "W292, W503, E402"
+max-line-length = 150
+max-complexity = 12
+
+# ##########################################
+
+[tool.pytest.ini_options]
+minversion = 6.0
+addopts = '--doctest-continue-on-failure --doctest-modules --doctest-ignore-import-errors --junitxml=test_results/pytest_result_junit.xml -vs'
+junit_family = "xunit2"
+
+testpaths = ["tests"]
+
+# Exclude directories from lookup:
+norecursedirs = ["dist", "*.egg-info", ".deps", "dependencies"]
+
+junit_logging = "all"
+#junit_log_passing_tests = False
+
+console_output_style = "progress"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+# #########################################
+
+[tool.coverage.run]
+source = ["report_generator"]
+branch = true
+data_file = "test_results/.coverage"
+omit = [
+    "*/__init__.py",
+    "*/version.py"
+]
+
+[tool.coverage.xml]
+output = "test_results/coverage.xml"
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

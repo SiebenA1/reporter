@@ -1,0 +1,11 @@
+__pycache__
+build
+.nox
+.mypy_cache
+.pytest_cache
+.coverage
+test_results
+delivery
+dist
+*.egg-info
+.idea

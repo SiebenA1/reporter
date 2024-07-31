@@ -1,0 +1,30 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# default setup for all files
+[*]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+charset = UTF-8
+trim_trailing_whitespace = true
+
+[*.xml]
+indent_size = 2 
+
+[*.{js,py}]
+charset = utf-8
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+
+# Unix line ending in shell scripts
+[{*.sh,*.bash}]
+end_of_line = lf

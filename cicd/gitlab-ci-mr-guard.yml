@@ -1,0 +1,15 @@
+stages:
+- mr_guard
+
+mr_guard:
+  stage: mr_guard
+  image: registry.gitlab.iavgroup.local/cn-tv-a/toolchain/post_processing/report_generator/python:3.11.3
+  script:
+    - env
+    - echo "MR gurad for CN-TV-A repository."
+    - python -m cicd.scripts.mr_guard --jira-resource-name CNTVATEAM
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - when: never
+  # tags:
+  #   - k8s-shared-linux-new

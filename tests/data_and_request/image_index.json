@@ -1,0 +1,25 @@
+[
+    {
+        "CCRs_AEB_test_case_1": {
+            "File 1": [
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__1Warning.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__2Deceleration.png"
+            ]
+        },
+        "CCRs_AEB_test_case_2": {
+            "File 1": [
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__1Warning.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__2Deceleration.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__3Reference_Velocities_from_Ego___Target.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__4Reference_Distance.png"
+            ],
+            "File 2": [
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__1Warning.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__2Deceleration.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__3Reference_Velocities_from_Ego___Target.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__4Reference_Distance.png",
+                "tests/data_and_request/result_images/CCRs_100_20_ECE_MM_20231106_171436__5Additional_Signals.png"
+            ]
+        }
+    }
+]

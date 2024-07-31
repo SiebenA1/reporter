@@ -1,0 +1,57 @@
+stages:
+- lint_check
+- unittest
+
+before_script:
+  - env
+  - pwd
+  - ls
+
+lint_check_mypy:
+  stage: lint_check
+  image: registry.gitlab.iavgroup.local/cn-tv-a/toolchain/post_processing/report_generator/python:3.11.3
+  script:
+    - python -m cicd.scripts.lint_check --folder-or-file-path report_generator tests scripts noxfile.py --config-file pyproject.toml --lint-tool mypy
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~/^feature.*/
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - when: never
+  # tags:
+  #   - k8s-shared-linux-new
+
+lint_check_pylint:
+  stage: lint_check
+  image: registry.gitlab.iavgroup.local/cn-tv-a/toolchain/post_processing/report_generator/python:3.11.3
+  script:
+    - python -m cicd.scripts.lint_check --folder-or-file-path report_generator tests scripts noxfile.py --config-file pyproject.toml --lint-tool pylint
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~/^feature.*/
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - when: never
+  # tags:
+  #   - k8s-shared-linux-new
+
+lint_check_flake8:
+  stage: lint_check
+  image: registry.gitlab.iavgroup.local/cn-tv-a/toolchain/post_processing/report_generator/python:3.11.3
+  script:
+    - python -m cicd.scripts.lint_check --folder-or-file-path report_generator tests scripts noxfile.py --config-file pyproject.toml --lint-tool flake8
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~/^feature.*/
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - when: never
+  # tags:
+  #   - k8s-shared-linux-new
+
+unittest:
+  stage: unittest
+  image: registry.gitlab.iavgroup.local/cn-tv-a/toolchain/post_processing/report_generator/python:3.11.3
+  script:
+    - python -m scripts.install_submodule
+    - python -m cicd.scripts.unittest_check --config-file pyproject.toml --min-total-coverage 80
+  rules:
+    - if: $CI_COMMIT_REF_NAME =~/^feature.*/
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - when: never
+  # tags:
+  #   - k8s-shared-linux-new

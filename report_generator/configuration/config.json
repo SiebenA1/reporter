@@ -1,0 +1,93 @@
+{
+    "SETTINGS":
+    {
+        "line_spacing": 1.0,
+        "top_margin": 1.0,
+        "bottom_margin": 1.0,
+        "left_margin": 1.0,
+        "right_margin": 1.0,
+        "header_text": "C-NCAP 2021 Technical Report",
+        "footer_text": "Status: Freigegeben, Vertraulich",
+        "middle_footer_text": "IAV GmbH · © IAV",
+        "logo_path": "resources/icons/IAV_Logo.png"
+    },
+    "TEXT_FORMAT":
+    {
+        "HEADER": {
+            "font_name": "Arial",
+            "font_size": 14,
+            "color": "(0x00, 0x00, 0x00)",
+            "italic": "False",
+            "bold": "True"
+        },
+        "TITLE": {
+            "L1":
+            {
+                "font_name": "Arial",
+                "font_size": 14,
+                "color": "(0x00, 0x00, 0x00)",
+                "italic": "False",
+                "bold": "True"
+            },
+            "L2": {
+                "font_name": "Arial",
+                "font_size": 13,
+                "color": "(0x00, 0x00, 0x00)",
+                "italic": "False",
+                "bold": "True"
+            },
+            "L3": {
+                "font_name": "Arial",
+                "font_size": 12,
+                "color": "(0x00, 0x00, 0x00)",
+                "italic": "False",
+                "bold": "True"
+            }
+        },
+        "PARAGRAPH": {
+            "font_name": "Arial",
+            "font_size": 11,
+            "color": "(0x00, 0x00, 0x00)",
+            "italic": "False",
+            "bold": "False",
+            "line_spacing": 1.5
+        },
+        "CAPTION": {
+            "font_name": "Arial",
+            "font_size": 10,
+            "color": "(0x00, 0x00, 0x00)",
+            "italic": "True",
+            "bold": "False",
+            "alignment": "center"
+        },
+        "TABLE": {
+            "font_name": "Arial",
+            "font_size": 11,
+            "color": "(0x00, 0x00, 0x00)",
+            "italic": "False",
+            "bold": "False",
+            "line_spacing": 1.0
+        },
+        "POSITIVE_STATUS": {
+            "font_name": "Arial",
+            "font_size": 12,
+            "color": "(0x00, 0xFF, 0x00)",
+            "italic": "False",
+            "bold": "True"
+        },
+        "NEGATIVE_STATUS": {
+            "font_name": "Arial",
+            "font_size": 12,
+            "color": "(0xFF, 0x00, 0x00)",
+            "italic": "False",
+            "bold": "True"
+        },
+        "FOOTER": {
+            "font_name": "Arial",
+            "font_size": 8,
+            "color": "(0x00, 0x00, 0x00)",
+            "italic": "False",
+            "bold": "False"
+        }
+    }
+}

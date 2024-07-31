@@ -1,0 +1,8 @@
+nox==2024.4.15
+
+-r ./requirements/requirements_build.txt
+-r ./requirements/requirements_deploy.txt
+-r ./requirements/requirements_doc.txt
+-r ./requirements/requirements_lint.txt
+-r ./requirements/requirements_project.txt
+-r ./requirements/requirements_test.txt

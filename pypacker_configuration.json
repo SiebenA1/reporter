@@ -1,0 +1,38 @@
+{
+    "build_tool": "pyinstaller",
+    "app_name": "report_generator",
+    "logo": "resources/icons/IAV_Logo_B1.ico",
+    "main": [
+        "report_generator/__main__.py"
+    ],
+    "additional_options": {
+        "report_generator/__main__.py": [
+            "--contents-directory bin"
+        ]
+    },
+    "requirements": [
+        "requirements/requirements_project.txt"
+    ],
+    "data_files": [
+        {
+            "src": "doc/report_generator_user_docu.pdf",
+            "dst": "doc/report_generator_user_docu.pdf"
+        },
+        {
+            "src": "doc/report_generator_api_docu",
+            "dst": "doc/report_generator_api_docu"
+        },
+        {
+            "src": "doc/README.html",
+            "dst": "doc/README.html"
+        },
+        {
+            "src": "doc/CHANGELOG.html",
+            "dst": "doc/CHANGELOG.html"
+        },
+        {
+            "src": "setup/ServiceDesk.bat",
+            "dst": "ServiceDesk.bat"
+        }
+    ]
+}

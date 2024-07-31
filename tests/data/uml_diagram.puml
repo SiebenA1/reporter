@@ -1,0 +1,137 @@
+
+@startuml
+class ReportGenerator {
+    - sections: List<Section>
+    + add_section(section: Section)
+    + generate(path: str)
+}
+
+interface Section {
+    + add_element(element: Element)
+    + get_elements()
+    + render(document)
+}
+
+class CaseSection {
+    - elements: List<Element>
+    + add_element(element: Element)
+    + render(document)
+}
+
+interface Element {
+    + render(document)
+}
+
+class TextFormat {
+    -font_name: str
+    -font_size: int
+    -bold: bool
+    -italic: bool
+    -alignment: WD_ALIGN_PARAGRAPH
+    +TextFormat(format)
+    +apply_format(run)
+}
+
+class TitleTextFormat {
+    +TitleTextFormat()
+}
+
+class NormalTextFormat {
+    +NormalTextFormat()
+}
+
+class PositiveStatusTextFormat {
+    +PositiveStatusTextFormat()
+}
+
+class NegativeStatusTextFormat {
+    +NegativeStatusTextFormat()
+}
+class CaptionTextFormat {
+    +CaptionTextFormat()
+}
+
+class TableTextFormat {
+    +TableTextFormat()
+}
+
+class HeaderTextFormat {
+    +HeaderTextFormat()
+}
+
+class FooterTextFormat {
+    +FooterTextFormat()
+}
+
+class Title {
+    - text: str
+    - level: int
+    + render(document)
+}
+
+class Paragraph {
+    -text: str
+    -text_format: TextFormat
+    +render(document)
+}
+class Image {
+    -path: str
+    -caption: str
+    -caption_format: CaptionTextFormat
+    -width: int
+    -height: int
+    +Image(path, caption, caption_format)
+    +render(document)
+}
+
+class Table {
+    - title: str
+    - data: List<List[str]] / DataFrame
+    + set_data(data: List[List[str]] / DataFrame)
+    + set_title(title: str)
+    + render(document)
+}
+
+interface SetupBuilder {
+    + header_render(document)
+    + footer_render(document)
+    + page_num_render(document)
+}
+
+class GlobalSetupBuilder {
+    - doc: Document
+    - left_header_text: str
+    - right_header_text: str
+    - footer_text: str
+    + header_render(document)
+    + footer_render(document)
+    + page_num_render(document)
+}
+
+class Configuration {
+    - settings: dict
+    + set_param(key: str, value: Any)
+    + get_param(key: str)
+}
+
+ReportGenerator --> Section
+Section <|-- CaseSection
+CaseSection --> Element
+Element <|-- TextFormat
+TextFormat <|-- NormalTextFormat
+TextFormat <|-- PositiveStatusTextFormat
+TextFormat <|-- NegativeStatusTextFormat
+TextFormat <|-- TitleTextFormat
+TextFormat <|-- CaptionTextFormat
+TextFormat <|-- TableTextFormat
+TextFormat <|-- HeaderTextFormat
+TextFormat <|-- FooterTextFormat
+Element <|-- Title
+Element <|-- Paragraph
+Element <|-- Image
+Element <|-- Table
+Element <|-- SetupBuilder
+SetupBuilder <|-- GlobalSetupBuilder
+ReportGenerator --> Configuration
+
+@enduml

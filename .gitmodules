@@ -1,0 +1,3 @@
+[submodule "submodules/pypacker"]
+	path = submodules/pypacker
+	url = git@gitlab.iavgroup.local:cn-tv-a/devops/pypacker.git

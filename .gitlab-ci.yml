@@ -1,0 +1,12 @@
+variables:
+  VERSION: 0.1.0
+  PYTHONUNBUFFERED: "TRUE"
+
+stages:
+- mr_guard
+- lint_check
+- unittest
+
+include:
+  - local: 'cicd/gitlab-ci-mr-guard.yml'
+  - local: 'cicd/gitlab-ci-code-check.yml'
