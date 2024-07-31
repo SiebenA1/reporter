@@ -1,7 +1,5 @@
 # report_generator
 
-![IAV](resources/images/IAV.svg "IAV Automotive Engineering (Shanghai) Co., Ltd.")
-
 ## Table of Contents
 
 - [report\_generator](#report_generator)
@@ -40,8 +38,6 @@
 
 |||
 |-|-|
-| **WARNING** | This is an expert tool in an early prototype and development status. </br> This expert tool is created by IAV Automotive Engineering (Shanghai) Co., Ltd.. </br> IAV Automotive Engineering (Shanghai) Co., Ltd. is not responsible for any damage caused by this tool. </br> Use this tool at your own risk. |
-| **WARNING** | !!! DRAFT version !!! |
 |||
 
 ## Licenses
@@ -59,10 +55,6 @@ Current release version and further details can be found in `CHANGELOG.md`.
 ## How To Update
 
 ```powershell
-1. cd target_repo
-2. git checkout -b feature/update_with_project_template
-3. git fetch git@gitlab.iavgroup.local:cn-tv-a/toolchain/project_template.git master:feature/master_template_repo
-4. git cherry-pick commit_sha
 ```
 
 ## Processing
